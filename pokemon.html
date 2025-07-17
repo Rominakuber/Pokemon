@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+   
+        <title> POKEMON </title>
+
+    </head>
+    <body>
+
+        <section id = "pantalla-inicio">
+            <img src ="imagen/logo.png" id ="imagen-logo">
+            <img src ="imagen/personajesPantallaDeCarga.png" id ="imagen-personajes">
+            
+            <button id ="play"> PLAY </button>
+        </section>
+
+        <section id = "pantalla-presentacion">
+
+            <button id ="comenzar-juego">Comenzar a jugar </button>
+
+        </section>
+
+
+        <section id="seleccionar-mascota">
+            
+            <h1 class="title"> Pokemon 🔥 🚿 🌱 </h1>
+             
+            <h2>Elige a tu mascota : </h2>
+
+            <label class ="tarjeta-de-mokepon" for  ="Raganar">Raganar</label>
+            <input type = "radio" name="mascota" id ="Raganar" />
+  
+            <label class ="tarjeta-de-mokepon" for="Naia" > Naia </label>
+            <input type = "radio" name ="mascota" id ="Naia" />
+
+            <label class ="tarjeta-de-mokepon" for = "Kael"> Kael </label>
+            <input type = "radio" name = "mascota" id ="Kael" />
+
+            <label class ="tarjeta-de-mokepon" for = "Lira"> Lira </label>
+            <input type = "radio" name = "mascota" id ="Lira" />
+
+         
+
+            <button id="boton-mascota">Seleccionar</button>
+        </section>
+
+        <section id = "pantalla-presentacion-totem">
+
+        
+        <p>Tu mascota<span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas </p>
+
+        <button id ="botton-siguiente-presentacion-totem"> SIGUIENTE para ver oponente </button>
+
+        </section>
+
+        <section id = "pantalla-presentacion-oponente">
+
+            <button id ="boton-comenzar-ataque"> comenzar ataque </button>
+            <p>la mascota del oponente es <span id="mascota-enemigo"></span> tiene <span id="vidas-enemigo">3</span> vidas </p>
+
+        </section>
+
+          
+        <section id = "comienza-juego">
+
+            <button id ="boton-comenzar-juego "> COMENZAR </button>
+            <p> comienza el juego </p>
+
+        </section>
+
+        <section id="seleccionar-ataque">
+            <h2>Elige tu ataque </h2> 
+            <p>
+                <button id="boton-fuego"> Fuego 🔥 </button>
+                <button id="boton-agua"> Agua 🚿 </button>
+                <button id="boton-tierra"> Tierra 🌱 </button>
+                <button id="boton-aire"> Aire 🌱 </button>
+                <button id="boton-electricidad"> Electricidad 🌱 </button>
+                <button id="boton-volver-atacar"> Atacar nuevamente</button>
+            </p>
+
+         <p id="puntaje-jugador"> Puntaje: <span id="contador-jugador">0</span></p>
+         <p id="puntaje-enemigo"> Puntaje: <span id="contador-enemigo">0</span></p>
+         
+        </section>
+    
+        <section id="mensajes">
+            
+        </section>
+        <section id="reiniciar">
+            <button id="boton-reiniciar">Reiniciar</button>
+        </section>
+        <script src="./js/pokemon.js"></script>
+        <link rel ="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    </body>
+</html>

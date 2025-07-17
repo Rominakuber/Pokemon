@@ -1,0 +1,90 @@
+
+
+#pantalla-inicio{
+ margin: 0;
+  background-image: url(imagen/background.png);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  
+  background-repeat: no-repeat;       
+  background-size: cover;            
+  background-position: center center; 
+  background-attachment: fixed;
+  z-index: 0;
+  position: relative;
+}
+
+#play{
+font-family: "Luckiest Guy", cursive;
+  font-size: 48px;
+  color: #dac38c;
+  -webkit-text-stroke: 2px #43351d;
+  text-shadow: 2px 2px 0px #2f2717;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 75px;
+  padding: 10px 20px;
+
+  background-color: #43351d;
+  background: linear-gradient(135deg, #8a5487, #484285);
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -160%);
+  width: 201px;
+  height: auto;
+  z-index: 10;
+}
+
+#imagen-logo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -160%);
+  width: 440px;
+  height: auto;
+  z-index: 10;
+}
+#imagen-personajes{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  width: 589px;
+  height: auto;
+  z-index: 10;
+}
+
+
+
+
+
+.title {
+ color: rgb(204, 122, 233);
+  height: 50px;
+  background-color: #7d346e26;
+}
+
+#seleccionar-mascota{
+    display: flex;
+    flex: direction;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta-de-mokepon{
+background: #ffe8fb;
+  display: flex;
+  padding: 10px 20px;
+  font-size: x-large;
+  font-family: arial, san-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 2px solid #e8caca21;
+  box-shadow: 0 4px 8px rgba(225, 95, 95, 0.4);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
