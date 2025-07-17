@@ -16,6 +16,7 @@ let sectionPresentacionOponente = document.getElementById("pantalla-presentacion
 let sectionComienzaJuego = document.getElementById("comienza-juego")
 let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
 let sectionBotonReiniciar = document.getElementById("reiniciar")
+let botonAtacar 
 
 // botones 
 let botonFuego = document.getElementById("boton-fuego")
