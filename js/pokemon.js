@@ -8,7 +8,9 @@ let nombreChamanJugador = ""
 let nombreChamanEnemigo = ""
  
 // secciones 
-let sectionPantallaDeCarga =document.getElementById("pantalla-inicio")
+let sectionPantallaLoading = document.getElementById("pantalla-carga")
+
+let sectionPantallaComenzarJuego =document.getElementById("pantalla-inicio")
 let seccionPantallaPresentacion = document.getElementById("pantalla-presentacion")
 let sectionSeleccionarMascota = document.getElementById("seleccionar-mascota")
 let sectionPresentacionTotem = document.getElementById("pantalla-presentacion-totem")
@@ -32,10 +34,10 @@ let spanVidasJugador = document.getElementById("vidas-jugador")
 let spanVidasEnemigo = document.getElementById("vidas-enemigo")
 
 
+function loading (){
 
-function iniciarPantallaDeCarga (){
-
-    sectionPantallaDeCarga.style.display = "block"
+    sectionPantallaLoading.style.display = "block"
+    sectionPantallaComenzarJuego.style.display = "none"
     seccionPantallaPresentacion.style.display = "none"
     sectionSeleccionarMascota.style.display = "none"
     sectionPresentacionTotem.style.display = "none"
@@ -44,13 +46,41 @@ function iniciarPantallaDeCarga (){
     sectionSeleccionarAtaque.style.display = "none"
     sectionBotonReiniciar.style.display = "none"
 
+    const loadingText = document.querySelector('.texto-carga');
+    const progress = document.querySelector('.barra-progreso');
+    let dots = '', progressWidth = 0;
+
+    const textInterval = setInterval(() => {
+    loadingText.textContent = "Cargando" + (dots = dots.length < 3 ? dots + '.' : '');
+    }, 500);
+
+    const progressInterval = setInterval(() => {
+    progress.style.width = (progressWidth += 2) + '%';
+    if (progressWidth >= 100) {
+        clearInterval(textInterval);
+        clearInterval(progressInterval);
+        loadingText.textContent = '¡Carga completada!';
+        document.querySelector('.barra-progreso').style.display = 'none';
+        sectionPantallaLoading.style.display = "none";
+        sectionPantallaComenzarJuego.style.display = "block";
+        iniciarPantallaDeJuego();
+    }
+    }, 100 );
+    
+    }
+
+
+function iniciarPantallaDeJuego (){
+
+  
+
     let botonPlay = document.getElementById("play")
     botonPlay.addEventListener("click", iniciarPantallaPresentacion)
 }
 
 function iniciarPantallaPresentacion (){
 
-    sectionPantallaDeCarga.style.display = "none"
+    sectionPantallaComenzarJuego.style.display = "none"
     seccionPantallaPresentacion.style.display = "block"
     sectionSeleccionarMascota.style.display = "none"
     sectionPresentacionTotem.style.display = "none"
@@ -73,7 +103,6 @@ function iniciarJuego(){
 
     let botonMascotaJugador = document.getElementById("boton-mascota")
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
-
    
 }
 
@@ -108,7 +137,7 @@ function seleccionarMascotaJugador(){
 
 function mostrarMascotaJugador(){
 
-    sectionPantallaDeCarga.style.display = "none"
+    sectionPantallaComenzarJuego.style.display = "none"
     seccionPantallaPresentacion.style.display = "none"
     sectionSeleccionarMascota.style.display = "none"
     sectionPresentacionTotem.style.display = "block"
@@ -364,4 +393,4 @@ function reiniciarJuego (){
 function aleatorio(min,max){
     return Math.floor(Math.random() * (max - min + 1) + min )
 }
-window.addEventListener("load", iniciarPantallaDeCarga)
+window.addEventListener("load", loading)

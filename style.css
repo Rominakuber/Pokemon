@@ -1,19 +1,105 @@
 
-
-#pantalla-inicio{
- margin: 0;
-  background-image: url(imagen/background.png);
+/* Aplica un fondo a toda la pantalla */
+body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  
-  background-repeat: no-repeat;       
-  background-size: cover;            
-  background-position: center center; 
-  background-attachment: fixed;
-  z-index: 0;
-  position: relative;
+  background: url('imagen/background.png') no-repeat center center fixed; /* Cambialo si querés color */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
 }
+
+.imagen-carga {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    position: relative;
+}
+
+.imagen-carga:before,
+.imagen-carga:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    animation: pulsOut 1.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 1rem rgba(149, 128, 255, 0.75));
+}
+
+.imagen-carga:before {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(149, 128, 255, 0.15);
+    animation-delay: 0.5s;
+}
+
+.imagen-carga:after {
+    width: 75%;
+    height: 75%;
+    background-color: rgba(149, 128, 255, 0.5);
+    top: 12.5%;
+    left: 12.5%;
+}
+
+@keyframes pulsOut {
+    0%, 100% { transform: scale(0); }
+    50% { transform: scale(1); }
+}
+
+.texto-carga {
+    color: #e0e0e0;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.barra-loading {
+    width: 200px;
+    height: 4px;
+    background: #16213e;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.barra-progreso {
+    height: 100%;
+    background: #9580ff;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+
+
+
+/* Contenedor principal vertical centrado */
+.contenedor-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* espacio entre elementos */
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Ajustes para la imagen del logo */
+.imagen-logo img {
+  width: 200px;
+  height: auto;
+}
+
+/* Ajustes para los tótems */
+.imagen-totem img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+
+
 
 #play{
 font-family: "Luckiest Guy", cursive;
@@ -29,33 +115,24 @@ font-family: "Luckiest Guy", cursive;
 
   background-color: #43351d;
   background: linear-gradient(135deg, #8a5487, #484285);
-  position: absolute;
-  top: 82%;
-  left: 50%;
-  transform: translate(-50%, -160%);
+  position: inherit;
+  top: 78%;
+  left: 44%;
   width: 201px;
-  height: auto;
+ 
   z-index: 10;
+  transition: all 0.5s ease;
+}
+#play:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); 
 }
 
-#imagen-logo{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -160%);
-  width: 440px;
-  height: auto;
-  z-index: 10;
-}
-#imagen-personajes{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  width: 589px;
-  height: auto;
-  z-index: 10;
-}
+
+
+
+
 
 
 

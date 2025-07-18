@@ -2,19 +2,38 @@
 <html>
     <head>
         <meta charset="utf-8" />
-   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilos.css"> 
+        
         <title> POKEMON </title>
 
     </head>
     <body>
+    
+    <section id = "pantalla-carga">
 
-        <section id = "pantalla-inicio">
-            <img src ="imagen/logo.png" id ="imagen-logo">
-            <img src ="imagen/personajesPantallaDeCarga.png" id ="imagen-personajes">
-            
-            <button id ="play"> PLAY </button>
-        </section>
+        <div class = "imagen-carga" > </div>
+        <p class ="texto-carga">Cargando juego </p>
+        <div class = "barra-loading"> 
+        <div class = "barra-progreso">  
+    </section>
 
+    <div class="contenedor-principal"> 
+        <section id="pantalla-inicio">
+
+    <div class="imagen-logo">
+      <img src="imagen/logo.png" alt="Logo">
+    </div>
+
+    <div class="imagen-totem">
+      <img src="imagen/personajesPantallaDeCarga.png" alt="Tótems">
+    </div>
+
+    <button id="play">PLAY</button>
+
+  </section>
+</div>
+        
         <section id = "pantalla-presentacion">
 
             <button id ="comenzar-juego">Comenzar a jugar </button>
