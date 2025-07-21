@@ -8,6 +8,7 @@ let nombreChamanJugador = ""
 let nombreChamanEnemigo = ""
  
 // secciones 
+
 let sectionPantallaLoading = document.getElementById("pantalla-carga")
 
 let sectionPantallaComenzarJuego =document.getElementById("pantalla-inicio")
@@ -59,21 +60,20 @@ function loading (){
     if (progressWidth >= 100) {
         clearInterval(textInterval);
         clearInterval(progressInterval);
-        loadingText.textContent = '¡Carga completada!';
-        document.querySelector('.barra-progreso').style.display = 'none';
-        sectionPantallaLoading.style.display = "none";
-        sectionPantallaComenzarJuego.style.display = "block";
-        iniciarPantallaDeJuego();
+        loadingText.textContent = '¡Completo!';
+       
+        setTimeout(() => {
+             document.querySelector('.barra-progreso').style.display = 'block';
+             sectionPantallaLoading.style.display = "none";
+             sectionPantallaComenzarJuego.style.display = "block";
+            iniciarPantallaDeJuego();
+        }, 5000);
+       
     }
     }, 100 );
-    
     }
 
-
 function iniciarPantallaDeJuego (){
-
-  
-
     let botonPlay = document.getElementById("play")
     botonPlay.addEventListener("click", iniciarPantallaPresentacion)
 }
@@ -346,6 +346,7 @@ function crearMensaje(resultado ){
 }
 
 function bloquearBotonesSiguienteCombate(){
+    
     
     botonFuego.style.display = "none"
     botonAgua.style.display = "none"

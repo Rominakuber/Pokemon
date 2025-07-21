@@ -1,22 +1,46 @@
-
-/* Aplica un fondo a toda la pantalla */
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background: url('imagen/background.png') no-repeat center center fixed; /* Cambialo si querés color */
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url(imagen/background.png) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    overflow: visible;
+    flex-wrap: wrap;
 }
 
+#pantalla-carga {
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    background-color: #0c1f2b8a;
+}
+
+.contenedor-carga {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .imagen-carga {
-    width: 60px;
-    height: 60px;
-    margin: auto;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 150px;
     position: relative;
+     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: baseline;
 }
 
 .imagen-carga:before,
@@ -25,20 +49,20 @@ body {
     position: absolute;
     border-radius: 50%;
     animation: pulsOut 1.8s ease-in-out infinite;
-    filter: drop-shadow(0 0 1rem rgba(149, 128, 255, 0.75));
+    filter: drop-shadow(0 0 1rem rgba(3, 65, 14, 0.75));
 }
 
 .imagen-carga:before {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(149, 128, 255, 0.15);
+    width: 300%;
+    height: 300%;
+    background-color: #dac38c49;
     animation-delay: 0.5s;
 }
 
 .imagen-carga:after {
-    width: 75%;
-    height: 75%;
-    background-color: rgba(149, 128, 255, 0.5);
+    width: 250%;
+    height: 250%;
+    background-color: rgba(#43351d83);
     top: 12.5%;
     left: 12.5%;
 }
@@ -49,16 +73,27 @@ body {
 }
 
 .texto-carga {
+    font-family: "Luckiest Guy", cursive;
+    font-size: 48px;
+    color: #dac38c;
+    -webkit-text-stroke: 2px #43351d;
+    text-shadow: 2px 2px 0px #2f2717;
+    background-size: cover;
     color: #e0e0e0;
     margin-top: 20px;
     text-transform: uppercase;
     text-align: center;
+    font-size: 2.5rem;          
+    color: #dac38c;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .barra-loading {
     width: 200px;
     height: 4px;
-    background: #16213e;
+    background: #dac38c;
     border-radius: 2px;
     overflow: hidden;
     margin-top: 20px;
@@ -66,62 +101,85 @@ body {
 
 .barra-progreso {
     height: 100%;
-    background: #9580ff;
+    background: #43351d;
     width: 0%;
     transition: width 0.5s ease;
 }
 
+@media (max-width: 600px) {
+  .barra-loading {
+    width: 80%;
+  }
+
+  .texto-carga {
+    font-size: 1.5rem;
+  }
+
+  .imagen-carga {
+    transform: scale(0.8);
+  }
+}
 
 
 
-/* Contenedor principal vertical centrado */
 .contenedor-principal {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* espacio entre elementos */
+  gap: 20px; 
   width: 100%;
   max-width: 600px;
 }
 
-/* Ajustes para la imagen del logo */
+.imagen-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
 .imagen-logo img {
-  width: 200px;
-  height: auto;
+    width: 400px;
+    height: auto;
+ 
 }
 
-/* Ajustes para los tótems */
+
 .imagen-totem img {
-  width: 100%;
-  max-width: 400px;
+  width: 600%;
+  max-width: 700px;
   height: auto;
 }
 
 
-
+.boton-play{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    align-content: stretch;
+    flex-wrap: nowrap;
+}
 
 #play{
-font-family: "Luckiest Guy", cursive;
-  font-size: 48px;
-  color: #dac38c;
-  -webkit-text-stroke: 2px #43351d;
-  text-shadow: 2px 2px 0px #2f2717;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 75px;
-  padding: 10px 20px;
-
-  background-color: #43351d;
-  background: linear-gradient(135deg, #8a5487, #484285);
-  position: inherit;
-  top: 78%;
-  left: 44%;
-  width: 201px;
- 
-  z-index: 10;
-  transition: all 0.5s ease;
+  font-family: "Luckiest Guy", cursive;
+    font-size: 48px;
+    color: #dac38c;
+    -webkit-text-stroke: 2px #43351d;
+    text-shadow: 2px 2px 0px #2f2717;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 75px;
+    padding: 10px 20px;
+    background-color: #43351d;
+    background: linear-gradient(135deg, #8a5487, #484285);
+    position: inherit;
+    top: 78%;
+    left: 44%;
+    width: 201px;
+    z-index: 10;
+    transition: all 0.5s ease;
 }
 #play:hover {
   cursor: pointer;
